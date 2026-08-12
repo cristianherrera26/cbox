@@ -3,5 +3,7 @@
 
 char *basename(char *str);
 char *dirname(char *str);
+char *get_progname(void);
+void set_progname(char *user_progname);
 
 #endif

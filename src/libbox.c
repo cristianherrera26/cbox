@@ -1,5 +1,7 @@
 #include <string.h>
 
+char *progname;
+
 char
 *basename(char *str)
 {
@@ -16,4 +18,19 @@ char
 	while (str[len--] != '/');
 	str[len + 1] = 0;
 	return str;
+}
+
+void
+set_progname(char *user_progname)
+{
+	if ((progname = strrchr(user_progname, '/')) == NULL)
+		progname = user_progname;
+	else
+		progname++;
+}
+
+char
+*get_progname(void)
+{
+	return progname;
 }

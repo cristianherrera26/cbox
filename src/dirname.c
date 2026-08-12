@@ -3,7 +3,12 @@
 
 int dirname_main(int argc, char *argv[])
 {
-	for (int i = 1; i < argc; i++)
+	if (argc < 1) {
+		fputs("usage: dirname string...\n", stderr);
+		return 1;
+	}
+
+	for (int i = 0; i < argc; i++)
 		puts(dirname(argv[i]));
 	return 0;
 }
